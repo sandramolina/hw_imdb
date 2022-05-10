@@ -30,11 +30,11 @@ const FilmListBox = () => {
 
   return (
     <>
-      <h1>Upcoming Film Releases for UK</h1>
+      <h1 className='title'>Upcoming Film Releases for UK</h1>
       <hr></hr>
       <FilmList filmsArray={films} />
       <ViewMore />
-      <h2>Add a new film to the list</h2>
+      <h2 className='subtitle'>Add a new film to the list</h2>
       <FilmForm postFilm={addFilm} />
     </>
   );

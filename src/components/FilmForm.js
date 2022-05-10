@@ -22,6 +22,7 @@ const FilmForm = ({ postFilm }) => {
   return (
     <form onSubmit={handleFormSubmit}>
       <input
+        className='input-box'
         type='text'
         value={title}
         placeholder='e.g Blackpanter'
@@ -29,13 +30,14 @@ const FilmForm = ({ postFilm }) => {
         required
       ></input>
       <input
+        className='input-box'
         type='url'
         value={link}
         placeholder='https://www.imdb.com/title/tt6710474/?ref_=rlm'
         onChange={handleLinkChange}
         required
       ></input>
-      <input type='submit' value='Post' />
+      <input type='submit' value='Post' className='btn' />
     </form>
   );
 };
