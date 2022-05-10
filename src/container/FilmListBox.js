@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import FilmForm from '../components/FilmForm';
 import FilmList from '../components/FilmList';
 import ViewMore from '../components/ViewMore';
 
@@ -20,12 +21,21 @@ const FilmListBox = () => {
       link: 'https://www.imdb.com/title/tt14439896/?ref_=rlm',
     },
   ]);
+
+  const addFilm = (postedFilm) => {
+    postedFilm.id = Date.now();
+    const updatedFilm = [...films, postedFilm];
+    setFilms(updatedFilm);
+  };
+
   return (
     <>
       <h1>Upcoming Film Releases for UK</h1>
       <hr></hr>
       <FilmList filmsArray={films} />
       <ViewMore />
+      <h2>Add a new film to the list</h2>
+      <FilmForm postFilm={addFilm} />
     </>
   );
 };
